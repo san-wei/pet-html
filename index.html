@@ -14,7 +14,7 @@ function submitBooking() {
   };
 
   // 傳送到剛才部署的 GAS URL
-  fetch('你的GAS部署URL', {
+  fetch('https://script.google.com/macros/s/AKfycby07Lz999ADWTAFeHAUEgIYyxeT9qnEzk98cAjctSmB313w1HNx7pPSnAcF395U-0Krqw/exec', {
     method: 'POST',
     body: JSON.stringify(data)
   }).then(() => alert('預約成功！'));

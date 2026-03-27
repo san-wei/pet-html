@@ -1,0 +1,22 @@
+<form id="bookingForm">
+  姓名：<input type="text" id="name" required><br>
+  日期：<input type="date" id="date" required><br>
+  時間：<input type="time" id="time" required><br>
+  <button type="button" onclick="submitBooking()">提交預約</button>
+</form>
+
+<script>
+function submitBooking() {
+  const data = {
+    name: document.getElementById('name').value,
+    date: document.getElementById('date').value,
+    time: document.getElementById('time').value
+  };
+
+  // 傳送到剛才部署的 GAS URL
+  fetch('你的GAS部署URL', {
+    method: 'POST',
+    body: JSON.stringify(data)
+  }).then(() => alert('預約成功！'));
+}
+</script>
